@@ -1,0 +1,309 @@
+/* Global "Innovation V2" Background */
+.innovationContainer {
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+    background-color: #f8fafc;
+    color: #0f172a;
+}
+
+/* --- Ultra Hero --- */
+.ultraHero {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1000px;
+    background: radial-gradient(circle at 50% 50%, #ffffff 0%, #e2e8f0 100%);
+}
+
+.heroGrid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background-image:
+        linear-gradient(rgba(148, 163, 184, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(148, 163, 184, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    transform: perspective(500px) rotateX(60deg) translateY(-100px) translateZ(-200px);
+    animation: gridMove 20s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes gridMove {
+    0% {
+        transform: perspective(500px) rotateX(60deg) translateY(0) translateZ(-200px);
+    }
+
+    100% {
+        transform: perspective(500px) rotateX(60deg) translateY(50px) translateZ(-200px);
+    }
+}
+
+.heroContent {
+    text-align: center;
+    z-index: 10;
+}
+
+.megaTitle {
+    font-size: 8rem;
+    font-weight: 900;
+    line-height: 0.9;
+    letter-spacing: -4px;
+    background: linear-gradient(180deg, #0f172a 0%, #475569 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.heroSubtitle {
+    font-size: 1.5rem;
+    color: #64748b;
+    max-width: 600px;
+    margin: 0 auto 3rem auto;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+
+/* Floating 3D Elements in Hero */
+.floater {
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.1));
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+}
+
+/* --- Section Transitions --- */
+.seamlessSection {
+    padding: 10rem 0;
+    position: relative;
+}
+
+/* --- Who We Are (Redefined) --- */
+.whoWrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 6rem;
+}
+
+.whoVisual {
+    position: relative;
+    height: 600px;
+    background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 100%);
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.whoTextContent h2 {
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    color: #0f172a;
+    letter-spacing: -2px;
+}
+
+.whoTextContent p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #475569;
+    margin-bottom: 2rem;
+}
+
+/* --- Expertise (Holographic Cards) --- */
+.expertiseGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 4rem;
+}
+
+.holoCard {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    padding: 3rem;
+    border-radius: 24px;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+}
+
+.holoCard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+    transition: 0.5s;
+}
+
+.holoCard:hover::before {
+    left: 100%;
+}
+
+.holoCard:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+    border-color: var(--color-primary);
+}
+
+/* --- PaySetu (Dark Monolith) --- */
+.monolithSection {
+    background: #0f172a;
+    color: white;
+    padding: 8rem 0;
+    position: relative;
+    margin-top: 4rem;
+    border-radius: 40px;
+    margin-bottom: 4rem;
+    overflow: hidden;
+}
+
+.monolithGrid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.glowingOrb {
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(56, 189, 248, 0.2) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+@media (max-width: 1024px) {
+    .megaTitle {
+        font-size: 5rem;
+    }
+
+    .whoWrapper,
+    .monolithGrid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .expertiseGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .whoVisual {
+        height: 400px;
+    }
+}
+
+/* --- Why Choose Us --- */
+.whyChooseGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    margin-top: 4rem;
+}
+
+.whyCard {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    border: 1px solid #f1f5f9;
+}
+
+.whyCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    border-color: var(--color-primary);
+}
+
+/* --- Capabilities --- */
+.capabilitiesSection {
+    background: #000;
+    color: white;
+    padding: 8rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.capabilityGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-top: 4rem;
+}
+
+.capabilityCard {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 16px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.capabilityCard:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #38bdf8;
+    transform: scale(1.05);
+}
+
+@media (max-width: 1024px) {
+
+    .whyChooseGrid,
+    .capabilityGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- Tech Stock Marquee --- */
+.techMarqueeSection {
+    background: #0f172a;
+    padding: 4rem 0;
+    overflow: hidden;
+    position: relative;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.marqueeTrack {
+    display: flex;
+    gap: 4rem;
+    width: max-content;
+    animation: scroll 40s linear infinite;
+}
+
+.techItem {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.5);
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}

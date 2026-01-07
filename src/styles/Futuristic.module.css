@@ -1,0 +1,179 @@
+/* Global Futuristic Design System - Innovation V2 */
+/* Extends HomeOverhaul concepts to be reusable */
+
+.container {
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+    background-color: #f8fafc;
+    color: #0f172a;
+}
+
+/* --- Global Backgrounds --- */
+.heroBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 0;
+    background: radial-gradient(circle at 50% 50%, #ffffff 0%, #e2e8f0 100%);
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.gridMesh {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background-image:
+        linear-gradient(rgba(148, 163, 184, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(148, 163, 184, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    transform: perspective(500px) rotateX(60deg) translateY(-100px) translateZ(-200px);
+    animation: gridMove 20s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes gridMove {
+    0% {
+        transform: perspective(500px) rotateX(60deg) translateY(0) translateZ(-200px);
+    }
+
+    100% {
+        transform: perspective(500px) rotateX(60deg) translateY(50px) translateZ(-200px);
+    }
+}
+
+/* --- Typography --- */
+.megaTitle {
+    font-size: 5rem;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -2px;
+    background: linear-gradient(180deg, #0f172a 0%, #475569 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.sectionTitle {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    color: #0f172a;
+    letter-spacing: -1.5px;
+}
+
+.subtitle {
+    font-size: 1.25rem;
+    color: #64748b;
+    line-height: 1.8;
+    font-weight: 300;
+    max-width: 700px;
+}
+
+/* --- Components --- */
+.seamlessSection {
+    padding: 8rem 0;
+    position: relative;
+}
+
+.holoCard {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    padding: 3rem;
+    border-radius: 24px;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+}
+
+.holoCard:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+    border-color: #3b82f6;
+}
+
+/* --- Contact Specific --- */
+.glassForm {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    padding: 3rem;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+}
+
+.inputGroup input,
+.inputGroup textarea {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    background: rgba(255, 255, 255, 0.5);
+    color: inherit;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.inputGroup input:focus,
+.inputGroup textarea:focus {
+    border-color: #3b82f6;
+    background: white;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+}
+
+/* --- Project Timeline Nodes --- */
+.timelineNode {
+    position: relative;
+    border-left: 2px solid #e2e8f0;
+    padding-left: 3rem;
+    padding-bottom: 4rem;
+}
+
+.timelineNode::before {
+    content: '';
+    position: absolute;
+    left: -9px;
+    top: 0;
+    width: 16px;
+    height: 16px;
+    background: #3b82f6;
+    border-radius: 50%;
+    border: 4px solid white;
+    box-shadow: 0 0 0 2px #3b82f6;
+}
+
+/* --- Neural Network Visuals --- */
+.neuralNode {
+    width: 12px;
+    height: 12px;
+    background: #0ea5e9;
+    border-radius: 50%;
+    position: absolute;
+    box-shadow: 0 0 10px #0ea5e9;
+}
+
+.neuralLine {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #0ea5e9, transparent);
+    position: absolute;
+    transform-origin: left;
+}
+
+@media (max-width: 1024px) {
+    .megaTitle {
+        font-size: 3.5rem;
+    }
+
+    .sectionTitle {
+        font-size: 2.5rem;
+    }
+}

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://nakranitechno.com/sitemap.xml
