@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Brain, Cpu, Network, Bot, Sparkles, Binary } from 'lucide-react';
+import { Brain, Cpu, Network, Bot, Sparkles, Binary, Zap } from 'lucide-react';
 import styles from '../styles/Futuristic.module.css';
 import SEO from '../components/SEO';
 
