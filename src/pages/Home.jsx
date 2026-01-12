@@ -53,7 +53,7 @@ const Home = () => {
                         <Link to="/products" className="btn btn-primary" style={{ padding: '1rem 3rem', fontSize: '1.2rem', marginRight: '1rem' }}>
                             Explore Solutions <ArrowRight style={{ marginLeft: '10px' }} />
                         </Link>
-                        <Link to="/contact" className="btn btn-outline" style={{ padding: '1rem 3rem', fontSize: '1.2rem', color: 'white', borderColor: 'white' }}>
+                        <Link to="/contact" className="btn btn-outline" style={{ padding: '1rem 3rem', fontSize: '1.2rem' }}>
                             Talk to Experts
                         </Link>
                     </motion.div>
