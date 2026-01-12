@@ -1,0 +1,9 @@
+services:
+  - type: static_site
+    name: nakrani-tech-solution
+    env: node
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./dist
+    routes:
+      - path: "/*"
+        destination: /index.html
