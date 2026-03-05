@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown } from 'lucide-react';
-import { motion } from 'framer-motion';
-import styles from './Navbar.module.css'; // We will create this module for specific navbar styles
+import { Menu, X } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import styles from './Navbar.module.css';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,22 +17,50 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Close mobile menu on route change
+  useEffect(() => {
+    setIsOpen(false);
+  }, [location]);
+
   const navLinks = [
     { name: 'Home', path: '/' },
-    { name: 'About Us', path: '/about' },
+    { name: 'About', path: '/about' },
     { name: 'Products', path: '/products' },
-    { name: 'AI & Innovation', path: '/ai-innovation' },
     { name: 'Services', path: '/services' },
     { name: 'Projects', path: '/projects' },
-    { name: 'Contact Us', path: '/contact' },
+    { name: 'Contact', path: '/contact' },
   ];
+
+  const menuVariants = {
+    closed: {
+      opacity: 0,
+      y: -20,
+      transition: {
+        staggerChildren: 0.05,
+        staggerDirection: -1
+      }
+    },
+    opened: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        staggerChildren: 0.07,
+        delayChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    closed: { opacity: 0, x: -10 },
+    opened: { opacity: 1, x: 0 }
+  };
 
   return (
     <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
       <div className="container">
         <div className={styles.navContent}>
           <Link to="/" className={styles.logo}>
-            NAKRANI <span className={styles.logoHighlight}>TECHNO</span>
+            NAKRANI<span className={styles.logoHighlight}>TECHNO</span>
           </Link>
 
           {/* Desktop Nav */}
@@ -43,53 +71,61 @@ const Navbar = () => {
                 <Link
                   key={link.name}
                   to={link.path}
-                  className={styles.navLink}
-                  style={{ position: 'relative', padding: '0.5rem 1rem' }}
+                  className={`${styles.navLink} ${isActive ? styles.active : ''}`}
                 >
+                  {link.name}
                   {isActive && (
                     <motion.div
-                      layoutId="activeTab"
-                      style={{
-                        position: 'absolute',
-                        inset: 0,
-                        backgroundColor: 'rgba(56, 189, 248, 0.1)',
-                        borderRadius: '8px',
-                        zIndex: -1
-                      }}
-                      transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                      layoutId="navUnderline"
+                      className={styles.underline}
                     />
                   )}
-                  <span style={{ position: 'relative', zIndex: 1, color: isActive ? '#0284c7' : 'inherit' }}>
-                    {link.name}
-                  </span>
                 </Link>
               );
             })}
-            <Link to="/contact" className="btn btn-primary" style={{ marginLeft: '1rem', whiteSpace: 'nowrap' }}>Talk to Experts</Link>
+            <Link to="/contact" className="btn btn-primary btn-sm">Get Started</Link>
           </div>
 
-          {/* Mobile Menu Toggle */}
-          <button className={styles.mobileToggle} onClick={() => setIsOpen(!isOpen)}>
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          {/* Mobile Toggle */}
+          <button
+            className={styles.mobileToggle}
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle Menu"
+          >
+            {isOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
 
-        {/* Mobile Nav */}
-        {isOpen && (
-          <div className={styles.mobileNav}>
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                to={link.path}
-                className={styles.mobileNavLink}
-                onClick={() => setIsOpen(false)}
-              >
-                {link.name}
-              </Link>
-            ))}
-            <Link to="/contact" className={styles.mobileNavLink} onClick={() => setIsOpen(false)} style={{ color: '#0ea5e9' }}>Talk to Experts</Link>
-          </div>
-        )}
+        {/* Mobile Navigation Overlay */}
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              className={styles.mobileOverlay}
+              initial="closed"
+              animate="opened"
+              exit="closed"
+              variants={menuVariants}
+            >
+              <div className={styles.mobileLinks}>
+                {navLinks.map((link) => (
+                  <motion.div key={link.name} variants={itemVariants}>
+                    <Link
+                      to={link.path}
+                      className={`${styles.mobileLink} ${location.pathname === link.path ? styles.mobileActive : ''}`}
+                    >
+                      {link.name}
+                    </Link>
+                  </motion.div>
+                ))}
+                <motion.div variants={itemVariants} style={{ marginTop: '1rem' }}>
+                  <Link to="/contact" className="btn btn-primary" style={{ width: '100%' }}>
+                    Get Started
+                  </Link>
+                </motion.div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </nav>
   );

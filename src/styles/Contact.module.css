@@ -1,21 +1,21 @@
 .wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-    min-height: 70vh;
+    gap: 5rem;
+    align-items: flex-start;
+    padding: var(--section-padding) 0;
 }
 
 .infoSection h1 {
-    font-size: 3rem;
+    font-size: var(--font-size-3xl);
     margin-bottom: 1.5rem;
-    color: var(--color-text-main);
+    color: var(--color-primary);
     line-height: 1.1;
 }
 
 .subtitle {
-    font-size: 1.2rem;
-    color: var(--color-text-secondary);
+    font-size: var(--font-size-lg);
+    color: var(--color-text-muted);
     margin-bottom: 3rem;
 }
 
@@ -23,31 +23,34 @@
     display: flex;
     gap: 1.5rem;
     margin-bottom: 2rem;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .icon {
-    color: var(--color-primary);
+    color: var(--color-accent);
     width: 28px;
     height: 28px;
+    flex-shrink: 0;
 }
 
 .detailItem h3 {
-    font-size: 1.1rem;
-    margin-bottom: 0.2rem;
-    color: var(--color-text-main);
+    font-size: var(--font-size-base);
+    margin-bottom: 0.25rem;
+    color: var(--color-primary);
+    font-weight: 700;
 }
 
 .detailItem p {
-    color: var(--color-text-secondary);
+    color: var(--color-text-muted);
+    font-size: var(--font-size-base);
 }
 
 .formSection {
     background: white;
-    padding: 2.5rem;
-    border-radius: 20px;
-    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.1);
-    border: 1px solid #e2e8f0;
+    padding: 3rem;
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.08);
+    border: 1px solid var(--color-bg-subtle);
 }
 
 .inputGroup {
@@ -57,31 +60,43 @@
 .inputGroup label {
     display: block;
     margin-bottom: 0.5rem;
-    font-weight: 500;
-    color: var(--color-text-main);
+    font-weight: 600;
+    color: var(--color-primary);
+    font-size: var(--font-size-sm);
 }
 
 .inputGroup input,
 .inputGroup textarea {
     width: 100%;
-    padding: 0.8rem 1rem;
-    border: 1px solid #cbd5e1;
-    border-radius: 8px;
+    padding: 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: var(--border-radius-sm);
     font-family: inherit;
-    font-size: 1rem;
-    transition: border-color 0.2s;
+    font-size: var(--font-size-base);
+    transition: var(--transition-fast);
+    background: var(--color-bg-subtle);
 }
 
 .inputGroup input:focus,
 .inputGroup textarea:focus {
     outline: none;
-    border-color: var(--color-primary);
-    box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.1);
+    border-color: var(--color-accent);
+    background: white;
+    box-shadow: 0 0 0 4px var(--color-accent-soft);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
     .wrapper {
         grid-template-columns: 1fr;
-        gap: 3rem;
+        gap: 4rem;
+    }
+
+    .infoSection {
+        text-align: center;
+    }
+
+    .detailItem {
+        justify-content: center;
+        text-align: left;
     }
 }

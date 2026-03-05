@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { ArrowRight, Database, Activity, Server, Zap, ShieldCheck, CheckCircle, Code, Globe, Smartphone, Cpu, Cloud, Brain } from 'lucide-react';
+import { ArrowRight, Database, Activity, Server, Zap, ShieldCheck, CheckCircle, Code, Globe, Smartphone, Cpu, Cloud, Brain, TrendingUp } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import styles from '../styles/HomeOverhaul.module.css';
 import SEO from '../components/SEO';
@@ -46,14 +46,15 @@ const Home = () => {
                     </motion.p>
 
                     <motion.div
+                        className={styles.heroActions}
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.6 }}
                     >
-                        <Link to="/products" className="btn btn-primary" style={{ padding: '1rem 3rem', fontSize: '1.2rem', marginRight: '1rem' }}>
-                            Explore Solutions <ArrowRight style={{ marginLeft: '10px' }} />
+                        <Link to="/products" className="btn btn-primary">
+                            Explore Solutions <ArrowRight style={{ marginLeft: '10px' }} size={20} />
                         </Link>
-                        <Link to="/contact" className="btn btn-outline" style={{ padding: '1rem 3rem', fontSize: '1.2rem' }}>
+                        <Link to="/contact" className="btn btn-outline">
                             Talk to Experts
                         </Link>
                     </motion.div>
@@ -74,10 +75,10 @@ const Home = () => {
                             <h2>Beyond the Code</h2>
                             <p>
                                 We are not just developers; we are <strong>digital architects</strong>.
-                                In a world flooded with generic software, we engineer bespoke solutions that think, adapt, and scale.
+                                Beyond high-end software development, we provide professional <strong>server installation services</strong>, cloud infrastructure management, and hardware automation.
                             </p>
                             <p>
-                                Our approach bridges the gap between massive enterprise requirements and the agility of modern AI, ensuring your business isn't just running—it's evolving.
+                                Our approach bridges the gap between massive enterprise requirements and the agility of modern AI, ensuring your business infrastructure isn't just running—it's evolving.
                             </p>
                             <div style={{ display: 'flex', gap: '2rem', marginTop: '2rem' }}>
                                 <div>
@@ -95,9 +96,9 @@ const Home = () => {
                             {/* Abstract Geometric Composition */}
                             <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: '300px', height: '300px', background: 'white', borderRadius: '50%', filter: 'blur(80px)', opacity: 0.8 }}></div>
                             <img
-                                src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1000&auto=format&fit=crop"
-                                alt="Abstract Tech"
-                                style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.9, mixBlendMode: 'overlay' }}
+                                src="/beyond_the_code.png"
+                                alt="Abstract Tech Infrastructure"
+                                style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 1 }}
                             />
                         </div>
                     </div>
@@ -143,25 +144,33 @@ const Home = () => {
                     </div>
                     <div className={styles.capabilityGrid}>
                         {[
-                            { icon: <Globe size={24} color="#38bdf8" />, title: "Web Apps" },
-                            { icon: <Smartphone size={24} color="#a855f7" />, title: "Mobile Solutions" },
-                            { icon: <Brain size={24} color="#f472b6" />, title: "AI Agents" },
-                            { icon: <Cloud size={24} color="#34d399" />, title: "Cloud Infra" },
-                            { icon: <Database size={24} color="#fbbf24" />, title: "Data Engineering" },
-                            { icon: <ShieldCheck size={24} color="#f87171" />, title: "Cybersecurity" },
-                            { icon: <Code size={24} color="#60a5fa" />, title: "API Systems" },
-                            { icon: <Cpu size={24} color="#818cf8" />, title: "Hardware Automation" }
+                            { icon: <Globe size={32} />, title: "Web Architectures", desc: "Building scalable, high-performance web applications with modern frameworks." },
+                            { icon: <Smartphone size={32} />, title: "Mobile Engineering", desc: "Native and cross-platform solutions that deliver exceptional mobile experiences." },
+                            { icon: <Brain size={32} />, title: "AI Integration", desc: "Deploying intelligent agents and machine learning models for business automation." },
+                            { icon: <Cloud size={32} />, title: "Cloud Systems", desc: "Architecting secure, resilient, and elastic infrastructure on AWS, Azure, and Google Cloud." },
+                            { icon: <Database size={32} />, title: "Data Analytics", desc: "Turning raw data into actionable insights with professional data engineering." },
+                            { icon: <ShieldCheck size={32} />, title: "Cybersecurity", desc: "Implementing robust security protocols and zero-trust architectures for your digital assets." },
+                            { icon: <Code size={32} />, title: "Custom Software", desc: "Bespoke software development tailored precisely to your complex business needs." },
+                            { icon: <Cpu size={32} />, title: "IoT & Automation", desc: "Connecting the physical and digital worlds with smart sensors and hardware control." }
                         ].map((item, idx) => (
                             <motion.div
                                 key={idx}
                                 className={styles.capabilityCard}
-                                whileHover={{ scale: 1.05 }}
-                                initial={{ opacity: 0, y: 20 }}
+                                initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ delay: idx * 0.1 }}
+                                transition={{
+                                    duration: 0.6,
+                                    delay: idx * 0.1,
+                                    ease: "easeOut"
+                                }}
+                                viewport={{ once: true, margin: "-50px" }}
                             >
-                                <div style={{ marginBottom: '1rem' }}>{item.icon}</div>
-                                <h4 style={{ fontSize: '1.1rem', fontWeight: '600' }}>{item.title}</h4>
+                                <div className={styles.iconWrapper}>{item.icon}</div>
+                                <h4>{item.title}</h4>
+                                <p>{item.desc}</p>
+                                <div className={styles.cardFooter}>
+                                    Learn More <ArrowRight size={16} />
+                                </div>
                             </motion.div>
                         ))}
                     </div>
@@ -169,28 +178,57 @@ const Home = () => {
             </section>
 
             {/* --- Why Choose Us --- */}
-            <section className={styles.seamlessSection} style={{ background: 'white' }}>
+            <section className={styles.seamlessSection} style={{ background: '#f8fafc' }}>
                 <div className="container">
-                    <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-                        <h2 style={{ fontSize: '3rem', fontWeight: '800', marginBottom: '1rem' }}>Why Different?</h2>
-                        <p style={{ color: '#64748b' }}>We don't just write code; we solve business problems.</p>
+                    <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
+                        <div className={styles.badge}>Differentiators</div>
+                        <h2 style={{ fontSize: 'var(--font-size-3xl)', fontWeight: '800', marginBottom: '1.5rem', color: 'var(--color-primary)' }}>Why Different?</h2>
+                        <p style={{ color: 'var(--color-text-muted)', fontSize: '1.2rem', maxWidth: '600px', margin: '0 auto' }}>
+                            We don't just write code; we solve complex business problems with engineering precision.
+                        </p>
                     </div>
                     <div className={styles.whyChooseGrid}>
-                        <div className={styles.whyCard}>
-                            <Zap size={32} color="#f59e0b" style={{ marginBottom: '1rem' }} />
-                            <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '0.5rem' }}>Speed to Market</h3>
-                            <p style={{ color: '#64748b', fontSize: '0.95rem' }}>Rapid prototyping and agile delivery to get you launched fast.</p>
-                        </div>
-                        <div className={styles.whyCard}>
-                            <ShieldCheck size={32} color="#10b981" style={{ marginBottom: '1rem' }} />
-                            <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '0.5rem' }}>Enterprise Security</h3>
-                            <p style={{ color: '#64748b', fontSize: '0.95rem' }}>Bank-grade security protocols baked into every layer.</p>
-                        </div>
-                        <div className={styles.whyCard}>
-                            <Activity size={32} color="#3b82f6" style={{ marginBottom: '1rem' }} />
-                            <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '0.5rem' }}>Scalable Core</h3>
-                            <p style={{ color: '#64748b', fontSize: '0.95rem' }}>Systems designed to handle millions of users from day one.</p>
-                        </div>
+                        <motion.div
+                            className={styles.whyCard}
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5 }}
+                        >
+                            <div className={styles.whyIcon}>
+                                <Zap size={30} color="var(--color-accent)" />
+                            </div>
+                            <h3>Speed to Market</h3>
+                            <p>Rapid prototyping and agile delivery cycles designed to get your vision launched in record time.</p>
+                        </motion.div>
+
+                        <motion.div
+                            className={styles.whyCard}
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5, delay: 0.2 }}
+                        >
+                            <div className={styles.whyIcon}>
+                                <ShieldCheck size={30} color="#10b981" />
+                            </div>
+                            <h3>Enterprise Security</h3>
+                            <p>Bank-grade security protocols and zero-trust architecture baked into every single layer of code.</p>
+                        </motion.div>
+
+                        <motion.div
+                            className={styles.whyCard}
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5, delay: 0.4 }}
+                        >
+                            <div className={styles.whyIcon}>
+                                <TrendingUp size={30} color="#3b82f6" />
+                            </div>
+                            <h3>Scalable Core</h3>
+                            <p>Systems engineered to handle millions of concurrent users and massive data loads from day one.</p>
+                        </motion.div>
                     </div>
                 </div>
             </section>

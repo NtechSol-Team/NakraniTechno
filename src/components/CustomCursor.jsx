@@ -44,11 +44,12 @@ const CustomCursor = () => {
                 position: 'fixed',
                 top: 0,
                 left: 0,
-                zIndex: 9999
+                zIndex: 9999,
+                mixBlendMode: 'difference'
             }}
             animate={{
                 scale: isHovering ? 2.5 : 1,
-                backgroundColor: isHovering ? 'rgba(0, 168, 204, 0.3)' : 'rgba(0, 86, 179, 0.2)'
+                backgroundColor: isHovering ? 'rgba(56, 189, 248, 0.8)' : 'rgba(255, 255, 255, 1)'
             }}
             transition={{ scale: { duration: 0.2 } }}
         />
