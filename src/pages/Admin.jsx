@@ -5,17 +5,22 @@ import TiltCard from '../components/TiltCard';
 
 const Admin = () => {
     const [contacts, setContacts] = useState([]);
+    const [stats, setStats] = useState({ totalVisits: 0 });
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
     useEffect(() => {
+        // Fetch contacts
         fetch('/api/contacts')
-            .then(res => {
-                if (!res.ok) throw new Error('Failed to fetch data');
-                return res.json();
-            })
+            .then(res => res.json())
+            .then(data => setContacts(data.data || []))
+            .catch(err => console.error(err));
+
+        // Fetch stats
+        fetch('/api/stats')
+            .then(res => res.json())
             .then(data => {
-                setContacts(data.data || []);
+                setStats(data);
                 setLoading(false);
             })
             .catch(err => {
@@ -40,6 +45,19 @@ const Admin = () => {
 
             {loading && <p style={{ textAlign: 'center' }}>Loading database entries...</p>}
             {error && <p style={{ textAlign: 'center', color: 'red' }}>Error: {error}. Is the backend running on port 5001?</p>}
+
+            {!loading && !error && (
+                <div style={{ marginBottom: '3rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '2rem' }}>
+                    <TiltCard className="glass-card" style={{ padding: '1.5rem', textAlign: 'center', borderBottom: '4px solid var(--color-primary)' }}>
+                        <h3 style={{ fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--color-text-secondary)', marginBottom: '0.5rem' }}>Total Visits</h3>
+                        <p style={{ fontSize: '2.5rem', fontWeight: 'bold', color: 'var(--color-primary)' }}>{stats.totalVisits}</p>
+                    </TiltCard>
+                    <TiltCard className="glass-card" style={{ padding: '1.5rem', textAlign: 'center', borderBottom: '4px solid var(--color-secondary)' }}>
+                        <h3 style={{ fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--color-text-secondary)', marginBottom: '0.5rem' }}>Submissions</h3>
+                        <p style={{ fontSize: '2.5rem', fontWeight: 'bold', color: 'var(--color-secondary)' }}>{contacts.length}</p>
+                    </TiltCard>
+                </div>
+            )}
 
             {!loading && !error && (
                 <div style={{ display: 'grid', gap: '1.5rem' }}>

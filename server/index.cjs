@@ -25,6 +25,10 @@ const db = new sqlite3.Database(dbPath, (err) => {
       message TEXT,
       timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
     )`);
+        db.run(`CREATE TABLE IF NOT EXISTS visits (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+    )`);
     }
 });
 
@@ -52,6 +56,26 @@ app.get('/api/contacts', (req, res) => {
         res.json({
             message: "Success",
             data: rows
+        });
+    });
+});
+
+app.post('/api/visit', (req, res) => {
+    db.run(`INSERT INTO visits DEFAULT VALUES`, function (err) {
+        if (err) {
+            return res.status(500).json({ error: err.message });
+        }
+        res.json({ message: 'Visit recorded' });
+    });
+});
+
+app.get('/api/stats', (req, res) => {
+    db.get("SELECT COUNT(*) as totalVisits FROM visits", [], (err, row) => {
+        if (err) {
+            return res.status(500).json({ error: err.message });
+        }
+        res.json({
+            totalVisits: row.totalVisits
         });
     });
 });

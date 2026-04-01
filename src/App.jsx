@@ -3,6 +3,11 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import { HelmetProvider } from 'react-helmet-async';
 import { Menu, X } from 'lucide-react';
 import { AnimatePresence, motion, useScroll, useSpring } from 'framer-motion';
+import { initializeGA, trackPageView } from './utils/analytics';
+
+// Initialize GA4 with Measurement ID (Replace with your actual Measurement ID)
+initializeGA('G-9V211YE697');
+
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import About from './pages/About';
@@ -17,6 +22,24 @@ import ChatWidget from './components/ChatWidget';
 import CustomCursor from './components/CustomCursor';
 import ScrollToTop from './components/ScrollToTop';
 import Preloader from './components/Preloader';
+
+// Tracking Component
+const Analytics = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    // Track Page View with GA4
+    trackPageView(location.pathname + location.search, document.title);
+  }, [location]);
+
+  useEffect(() => {
+    // Record visit to local database (once on mount)
+    fetch('/api/visit', { method: 'POST' })
+      .catch(err => console.error('Error tracking visit:', err));
+  }, []);
+
+  return null;
+};
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -38,6 +61,7 @@ function App() {
   return (
     <HelmetProvider>
       <Router>
+        <Analytics />
         <AnimatePresence>
           {loading && <Preloader />}
         </AnimatePresence>
