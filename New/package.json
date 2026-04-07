@@ -1,0 +1,13 @@
+{
+  "name": "nakrani-techno",
+  "version": "1.0.0",
+  "description": "Nakrani Techno & Solution LLP Website Project",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx -y serve .",
+    "start": "npx -y serve ."
+  },
+  "keywords": [],
+  "author": "Nakrani Techno & Solution LLP",
+  "license": "ISC"
+}
