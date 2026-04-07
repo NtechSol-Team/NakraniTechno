@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Premium Services | Nakrani Techno & Solution LLP</title>
+    <meta name="description"
+        content="Explore our wide range of services including Custom Web Development, Software Engineering, ERP Solutions, and IT Infrastructure. High-performance digital solutions at scale.">
+    <meta name="keywords"
+        content="web development services, custom software solutions, ERP system development, high-end IT systems, digital engineering">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CDVFPE8LH5"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-CDVFPE8LH5');
+    </script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary": "#9e3d00",
+                        "secondary-fixed-dim": "#adc6ff",
+                        "error": "#ba1a1a",
+                        "surface-dim": "#d8dadc",
+                        "surface-container-high": "#e6e8ea",
+                        "outline": "#717786",
+                        "on-tertiary-fixed": "#351000",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-primary-fixed-variant": "#004493",
+                        "tertiary-container": "#c64f00",
+                        "background": "#f7f9fb",
+                        "on-error-container": "#93000a",
+                        "primary-container": "#0070eb",
+                        "on-tertiary-fixed-variant": "#7c2e00",
+                        "on-surface": "#191c1e",
+                        "on-primary-fixed": "#001a41",
+                        "outline-variant": "#c1c6d7",
+                        "on-secondary-fixed-variant": "#26467d",
+                        "inverse-on-surface": "#eff1f3",
+                        "surface": "#f7f9fb",
+                        "on-surface-variant": "#414755",
+                        "surface-bright": "#f7f9fb",
+                        "primary-fixed-dim": "#adc6ff",
+                        "tertiary-fixed": "#ffdbcc",
+                        "secondary-container": "#a1befd",
+                        "on-background": "#191c1e",
+                        "surface-variant": "#e0e3e5",
+                        "on-secondary-fixed": "#001a41",
+                        "inverse-surface": "#2d3133",
+                        "secondary-fixed": "#d8e2ff",
+                        "error-container": "#ffdad6",
+                        "surface-container-low": "#f2f4f6",
+                        "on-tertiary-container": "#fffbff",
+                        "surface-tint": "#005bc1",
+                        "secondary": "#405e96",
+                        "primary-fixed": "#d8e2ff",
+                        "on-primary-container": "#fefcff",
+                        "on-error": "#ffffff",
+                        "on-secondary-container": "#2d4c83",
+                        "surface-container": "#eceef0",
+                        "tertiary-fixed-dim": "#ffb595",
+                        "primary": "#0058bc",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "inverse-primary": "#adc6ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .glass-header {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, #0058bc 0%, #0070eb 100%);
+        }
+
+        .tonal-well {
+            background-color: #f2f4f6;
+        }
+
+        .ambient-card {
+            background-color: #ffffff;
+            box-shadow: 0px 20px 40px rgba(25, 28, 30, 0.06);
+        }
+
+        @keyframes blueprint-float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-6px);
+            }
+        }
+
+        .blueprint-shell {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .blueprint-shell::before {
+            content: '';
+            position: absolute;
+            inset: -20%;
+            background:
+                radial-gradient(circle at top left, rgba(0, 88, 188, 0.10), transparent 35%),
+                radial-gradient(circle at bottom right, rgba(0, 112, 235, 0.08), transparent 32%);
+            pointer-events: none;
+        }
+
+        .blueprint-card {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(242, 244, 246, 0.95));
+            border: 1px solid rgba(193, 198, 215, 0.2);
+            box-shadow: 0 18px 40px rgba(25, 28, 30, 0.05);
+            transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+        }
+
+        .blueprint-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+            transform: translateX(-120%);
+            transition: transform 0.8s ease;
+            pointer-events: none;
+        }
+
+        .blueprint-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(0, 88, 188, 0.22);
+            box-shadow: 0 26px 60px rgba(0, 88, 188, 0.12);
+        }
+
+        .blueprint-card:hover::after {
+            transform: translateX(120%);
+        }
+
+        .blueprint-badge {
+            animation: blueprint-float 5s ease-in-out infinite;
+        }
+
+        .blueprint-delay-1 {
+            animation-delay: 0.1s;
+        }
+
+        .blueprint-delay-2 {
+            animation-delay: 0.2s;
+        }
+
+        .blueprint-delay-3 {
+            animation-delay: 0.3s;
+        }
+
+        .blueprint-delay-4 {
+            animation-delay: 0.4s;
+        }
+
+        .blueprint-delay-5 {
+            animation-delay: 0.5s;
+        }
+
+        .blueprint-delay-6 {
+            animation-delay: 0.6s;
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-white">
+    <div id="header-placeholder"></div>
+    <main class="pt-16">
+        <!-- Hero Section -->
+        <section class="relative py-24 lg:py-32 px-6 lg:px-12 overflow-hidden bg-surface">
+            <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
+                <div class="w-full lg:w-3/5 space-y-8 z-10">
+                    <h1 class="text-5xl lg:text-7xl font-extrabold tracking-tighter leading-[1.1] text-on-surface">
+                        Engineered Excellence.<br />
+                        <span class="text-primary">Scalable Solutions.</span>
+                    </h1>
+                    <p class="text-xl text-on-surface-variant max-w-2xl leading-relaxed">
+                        From custom web experiences to enterprise-grade ERP systems, we deliver technology that propels
+                        your business forward.
+                    </p>
+                    <div class="flex flex-wrap gap-4 pt-4">
+                        <a href="contact.html"
+                            class="hero-gradient inline-flex items-center justify-center text-white px-8 py-4 rounded-xl font-semibold shadow-lg shadow-primary/20 btn-premium">
+                            Start a Consultation
+                        </a>
+                        <a href="case-studies.html"
+                            class="inline-flex items-center justify-center px-8 py-4 rounded-xl font-semibold text-primary border border-outline-variant/15 hover:bg-surface-container-low transition-colors">
+                            View Case Studies
+                        </a>
+                    </div>
+                </div>
+                <div class="w-full lg:w-2/5 relative">
+                    <div
+                        class="aspect-square rounded-full hero-gradient blur-[120px] opacity-20 absolute -top-12 -right-12">
+                    </div>
+                    <img alt="Precision Tech"
+                        class="relative z-10 w-full rounded-[2rem] object-cover aspect-[4/5] shadow-2xl"
+                        data-alt="Modern high-tech workspace with clean geometric lines, focused on architectural precision and bright digital lighting setup"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9IsSKghDBh0sPcVXE72214TVhd2YK1bZTanXFCqSlJQf6B5MV9RfO5jgMtbvSskA5SIsZFoRfmnk1hT2XiSwlDtdwhSf8uo3QUFNEhR9fOWaxIGvmk82xsqV8PR1348gHDlx_5yS-iURo4Y_MBpTTZXzx3HAzNXqGAntFDi1lb50mxIqB81QkqNgZi_BM_Gfk-69ORcgaaWGX5rm_lxrcBafU1jm-EX49ZO8mf-B_O4KK7xlKXQ9ghVlLhWQWCiQXspx0po70tVg" />
+                </div>
+            </div>
+        </section>
+        <!-- Core Services Sections (Detailed) -->
+        <section class="py-24 bg-surface-container-low px-6 lg:px-12">
+            <div class="max-w-7xl mx-auto space-y-32">
+                <!-- Service 1: Custom Web Development -->
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-3 text-primary">
+                            <span class="material-symbols-outlined text-3xl">language</span>
+                            <span class="font-label text-sm uppercase tracking-widest font-bold">Web Architecture</span>
+                        </div>
+                        <h2 class="text-4xl lg:text-5xl font-bold tracking-tight">Custom Web Development</h2>
+                        <p class="text-lg text-on-surface-variant leading-relaxed">
+                            We don't just build websites; we engineer digital destinations. Our SEO-ready architecture
+                            and performance-first approach ensure your brand stands out in the noise.
+                        </p>
+                        <div class="grid grid-cols-2 gap-4 pt-4">
+                            <div class="flex items-start gap-3 p-4 bg-surface-container-lowest rounded-xl shadow-sm">
+                                <span class="material-symbols-outlined text-primary"
+                                    data-weight="fill">check_circle</span>
+                                <span class="text-sm font-medium">React &amp; Next.js Development</span>
+                            </div>
+                            <div class="flex items-start gap-3 p-4 bg-surface-container-lowest rounded-xl shadow-sm">
+                                <span class="material-symbols-outlined text-primary"
+                                    data-weight="fill">check_circle</span>
+                                <span class="text-sm font-medium">Performance Optimization</span>
+                            </div>
+                            <div class="flex items-start gap-3 p-4 bg-surface-container-lowest rounded-xl shadow-sm">
+                                <span class="material-symbols-outlined text-primary"
+                                    data-weight="fill">check_circle</span>
+                                <span class="text-sm font-medium">Conversion-Ready Landing Pages</span>
+                            </div>
+                            <div class="flex items-start gap-3 p-4 bg-surface-container-lowest rounded-xl shadow-sm">
+                                <span class="material-symbols-outlined text-primary"
+                                    data-weight="fill">check_circle</span>
+                                <span class="text-sm font-medium">Scaleable E-commerce Platforms</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative group">
+                        <div
+                            class="absolute -inset-4 bg-primary/5 rounded-[2.5rem] blur-2xl group-hover:bg-primary/10 transition-colors">
+                        </div>
+                        <img alt="Web Development Interface"
+                            class="relative rounded-[2rem] shadow-xl w-full h-[400px] object-cover"
+                            data-alt="Minimalist dashboard interface showing analytical data with soft blue highlights and clean white background layout"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEgbxSltLbEyP3Q0TrJUZzYdZeCLZqZ7xbMhk9HFPA1WBe1OAkfzvDGSwbxSm_6COr74k61B9K1Ds6W8GKVuFtoNJJMXPLioChkNvWVd_GLJyCwulf9awZ9vTctdZQCMYEwGJE3n84MgEY2-ijTstPKu_yVwkR2ScIRIblX9YLxk5hddLon8Ta_nK966px-I2zECrRMnXLPL80PGoUHZEUd4Id9lJoD-dAHl9P-Jp_hp1DuhZPpVCOix6_bR2LnkPLivvGTvVyZeA" />
+                    </div>
+                </div>
+                <!-- Service 2: Custom Software Development -->
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div class="order-2 lg:order-1 relative">
+                        <img alt="Software Systems" class="rounded-[2rem] shadow-xl w-full h-[400px] object-cover"
+                            data-alt="Professional developer workspace with multiple monitors showing complex code structures and system architecture diagrams"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGnYpSxoxJfx1EUcJz-Sag-RvV6J9lfMNvHbtfSLl3vHjJRMaG2l9XQIOaDjnUQtCOchSaog_y0Nu3EwF69engyQIq-bpSvkwaPXpqtagNxP4T8ZynE9cTlYvi7Qag_HrH3Q_-4Jw_DzUqlWWGWiw9ztVQc2WrrM64U8u2zamdRZtH0b5ZgB1KbfDPloWQsNWIuJ_QIMTZ1HMb_ihIFqKKc9jf-a3Wmq0J5XBtIgQQ9wnIdScKbv5-ATVsz99MfZ5QWmQGjEkW4gM" />
+                    </div>
+                    <div class="order-1 lg:order-2 space-y-6">
+                        <div class="flex items-center gap-3 text-primary">
+                            <span class="material-symbols-outlined text-3xl">developer_board</span>
+                            <span class="font-label text-sm uppercase tracking-widest font-bold">Operational
+                                Logic</span>
+                        </div>
+                        <h2 class="text-4xl lg:text-5xl font-bold tracking-tight">Custom Software Development</h2>
+                        <p class="text-lg text-on-surface-variant leading-relaxed">
+                            Stop forcing your business into rigid templates. We build systems around your operations,
+                            automating workflows and providing central command via bespoke dashboards.
+                        </p>
+                        <ul class="space-y-4 pt-4">
+                            <li class="flex items-center gap-4 text-on-surface font-medium">
+                                <span class="w-2 h-2 rounded-full bg-primary"></span>
+                                Workflow Automation &amp; Optimization
+                            </li>
+                            <li class="flex items-center gap-4 text-on-surface font-medium">
+                                <span class="w-2 h-2 rounded-full bg-primary"></span>
+                                Admin Dashboards &amp; Real-time Monitoring
+                            </li>
+                            <li class="flex items-center gap-4 text-on-surface font-medium">
+                                <span class="w-2 h-2 rounded-full bg-primary"></span>
+                                Seamless API &amp; Third-party Integrations
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Service 3: ERP System Development (Bento Style) -->
+                <div class="space-y-12">
+                    <div class="text-center max-w-2xl mx-auto space-y-4">
+                        <h2 class="text-4xl font-bold tracking-tight">ERP System Development</h2>
+                        <p class="text-on-surface-variant">Scalable and secure architecture for the backbone of your
+                            enterprise.</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                        <div
+                            class="md:col-span-2 bg-surface-container-lowest p-8 rounded-[2rem] shadow-sm flex flex-col justify-between service-card-hover">
+                            <span class="material-symbols-outlined text-primary text-4xl mb-6">inventory_2</span>
+                            <div>
+                                <h3 class="text-2xl font-bold mb-2">Inventory Management</h3>
+                                <p class="text-on-surface-variant">Real-time tracking of assets, stock levels, and
+                                    procurement cycles across multiple locations.</p>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-primary p-8 rounded-[2rem] shadow-lg flex flex-col justify-between text-on-primary service-card-hover">
+                            <span class="material-symbols-outlined text-4xl mb-6">payments</span>
+                            <div>
+                                <h3 class="text-2xl font-bold mb-2">Finance</h3>
+                                <p class="text-primary-fixed/80">Automated accounting, payroll, and financial
+                                    forecasting tools.</p>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-surface-container-lowest p-8 rounded-[2rem] shadow-sm flex flex-col justify-between service-card-hover">
+                            <span class="material-symbols-outlined text-primary text-4xl mb-6">groups</span>
+                            <div>
+                                <h3 class="text-2xl font-bold mb-2">HR &amp; Payroll</h3>
+                                <p class="text-on-surface-variant">Employee lifecycle management and secure data
+                                    storage.</p>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-surface-container-lowest p-8 rounded-[2rem] shadow-sm flex flex-col justify-between service-card-hover">
+                            <span class="material-symbols-outlined text-primary text-4xl mb-6">analytics</span>
+                            <div>
+                                <h3 class="text-2xl font-bold mb-2">Reporting</h3>
+                                <p class="text-on-surface-variant">Advanced business intelligence and data
+                                    visualization.</p>
+                            </div>
+                        </div>
+                        <div
+                            class="md:col-span-2 bg-surface-container-lowest p-8 rounded-[2rem] shadow-sm flex flex-col justify-between service-card-hover">
+                            <span class="material-symbols-outlined text-primary text-4xl mb-6">security</span>
+                            <div>
+                                <h3 class="text-2xl font-bold mb-2">Enterprise Security</h3>
+                                <p class="text-on-surface-variant">Military-grade encryption and tiered access control
+                                    for all internal data assets.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service 4: IT Infrastructure & Servers -->
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-3 text-primary">
+                            <span class="material-symbols-outlined text-3xl">dns</span>
+                            <span class="font-label text-sm uppercase tracking-widest font-bold">Physical Systems</span>
+                        </div>
+                        <h2 class="text-4xl lg:text-5xl font-bold tracking-tight">IT Infrastructure & Server Solutions</h2>
+                        <p class="text-lg text-on-surface-variant leading-relaxed">
+                            Bespoke server builds and lifecycle management. We provide the robust physical backbone your digital enterprise demands, ensuring 24/7 technical stability and high-performance computing.
+                        </p>
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-4 py-3 border-b border-outline-variant/15">
+                                <span class="material-symbols-outlined text-primary">storage</span>
+                                <span class="font-medium">Custom Server Builds & Private Cloud Setup</span>
+                            </div>
+                            <div class="flex items-center gap-4 py-3 border-b border-outline-variant/15">
+                                <span class="material-symbols-outlined text-primary">terminal</span>
+                                <span class="font-medium">Server Management, Patching & Optimization</span>
+                            </div>
+                            <div class="flex items-center gap-4 py-3">
+                                <span class="material-symbols-outlined text-primary">lan</span>
+                                <span class="font-medium">Enterprise Networking & Secure Firewall Architecture</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <div
+                            class="absolute -inset-4 bg-primary/10 rounded-[2.5rem] blur-2xl opacity-0 hover:opacity-100 transition-opacity duration-700">
+                        </div>
+                        <img alt="Server and Infrastructure" class="relative rounded-[2rem] shadow-xl w-full h-[400px] object-cover"
+                            data-alt="Modern server rack with glowing cables and precise layout, emphasizing hardware engineering excellence"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMY86d52scKuQBGkfTbdB2ZS4VkSxV6Oz2Of60ZQgtXSkpP_i5xOwK3GPa493sU_kilydNdYv-NTltIE7SG3A60vfFDG0Udg8EnJMTWZOrDh2Jyu2BIefYO2DjOUTxLRQElT7LfVbM_CLgd_YEuF0c7RTfYrCwPHX5j37893M_EhmBf_TpqiuQI635dogT0H3Z1rYzK2sraqkipqezcM9_YKXHVDv2OuyzZITVtQThgX7Z9DueS5euRhe6NLSMyWETTh4VXWhta18" />
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Our Process Section -->
+        <section class="py-24 px-6 lg:px-12 bg-surface blueprint-shell">
+            <div class="max-w-7xl mx-auto space-y-16 relative z-10">
+                <div class="text-center space-y-4">
+                    <h2 class="text-4xl lg:text-5xl font-bold tracking-tight">The Nakrani Blueprint</h2>
+                    <p class="text-on-surface-variant max-w-2xl mx-auto text-lg">Our proven methodology for turning
+                        complex requirements into seamless digital experiences.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-8">
+                    <!-- Step 1 -->
+                    <div class="blueprint-card blueprint-badge blueprint-delay-1 flex flex-col items-center text-center space-y-4 relative rounded-[2rem] p-6">
+                        <div
+                            class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-xl mb-2 shadow-inner">
+                            01</div>
+                        <h4 class="font-bold">Analysis</h4>
+                        <p class="text-xs text-on-surface-variant">Deep dive into business goals and user needs.</p>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="blueprint-card blueprint-badge blueprint-delay-2 flex flex-col items-center text-center space-y-4 rounded-[2rem] p-6">
+                        <div
+                            class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-xl mb-2 shadow-inner">
+                            02</div>
+                        <h4 class="font-bold">Design</h4>
+                        <p class="text-xs text-on-surface-variant">Crafting the visual and interactive architecture.</p>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="blueprint-card blueprint-badge blueprint-delay-3 flex flex-col items-center text-center space-y-4 rounded-[2rem] p-6">
+                        <div
+                            class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-xl mb-2 shadow-inner">
+                            03</div>
+                        <h4 class="font-bold">Development</h4>
+                        <p class="text-xs text-on-surface-variant">Clean, scalable code built for longevity.</p>
+                    </div>
+                    <!-- Step 4 -->
+                    <div class="blueprint-card blueprint-badge blueprint-delay-4 flex flex-col items-center text-center space-y-4 rounded-[2rem] p-6">
+                        <div
+                            class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-xl mb-2 shadow-inner">
+                            04</div>
+                        <h4 class="font-bold">Testing</h4>
+                        <p class="text-xs text-on-surface-variant">Rigorous QA for bug-free performance.</p>
+                    </div>
+                    <!-- Step 5 -->
+                    <div class="blueprint-card blueprint-badge blueprint-delay-5 flex flex-col items-center text-center space-y-4 rounded-[2rem] p-6">
+                        <div
+                            class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-xl mb-2 shadow-inner">
+                            05</div>
+                        <h4 class="font-bold">Deployment</h4>
+                        <p class="text-xs text-on-surface-variant">Seamless go-live with zero downtime.</p>
+                    </div>
+                    <!-- Step 6 -->
+                    <div class="blueprint-card blueprint-badge blueprint-delay-6 flex flex-col items-center text-center space-y-4 rounded-[2rem] p-6">
+                        <div
+                            class="w-16 h-16 rounded-full bg-primary flex items-center justify-center text-white font-bold text-xl mb-2 shadow-lg shadow-primary/20">
+                            06</div>
+                        <h4 class="font-bold">Support</h4>
+                        <p class="text-xs text-on-surface-variant">Continuous monitoring and evolution.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Why Partner with Us -->
+        <section class="py-24 px-6 lg:px-12 bg-surface-container-lowest">
+            <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 items-center">
+                <div class="w-full lg:w-1/2">
+                    <h2 class="text-4xl lg:text-5xl font-extrabold tracking-tight mb-8">Why Partner with <span
+                            class="text-primary">Nakrani's Tech</span>?</h2>
+                    <div class="space-y-8">
+                        <div class="flex gap-6">
+                            <div
+                                class="flex-shrink-0 w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+                                <span class="material-symbols-outlined">architecture</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">Custom-Built, No Templates</h4>
+                                <p class="text-on-surface-variant">Every solution is forged from scratch to solve your
+                                    specific business challenges.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6">
+                            <div
+                                class="flex-shrink-0 w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+                                <span class="material-symbols-outlined">trending_up</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">Business-First Methodology</h4>
+                                <p class="text-on-surface-variant">We prioritize ROI and operational efficiency over
+                                    just 'cool tech'.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6">
+                            <div
+                                class="flex-shrink-0 w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+                                <span class="material-symbols-outlined">verified</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">End-to-End Execution</h4>
+                                <p class="text-on-surface-variant">From conceptual planning to post-launch maintenance,
+                                    we handle the entire lifecycle.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full lg:w-1/2">
+                    <div class="relative bg-surface p-12 rounded-[2.5rem] shadow-sm border border-outline-variant/10">
+                        <div
+                            class="absolute -top-6 -left-6 w-12 h-12 bg-primary rounded-xl flex items-center justify-center text-white shadow-lg">
+                            <span class="material-symbols-outlined">format_quote</span>
+                        </div>
+                        <p class="text-2xl font-medium italic text-on-surface-variant leading-relaxed mb-8">
+                            "The efficiency and precision they brought to our ERP integration was transformative.
+                            Nakrani's Tech doesn't just build systems; they engineer growth."
+                        </p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-surface-container-high overflow-hidden">
+                                <img alt="Client testimonial" class="w-full h-full object-cover"
+                                    data-alt="Professional headshot of a smiling business executive in a grey suit against a blurred office background"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvWNv48FiiSFjUiXFmHp6Nu01vhNLya_RxhY0RRBRPFBtn4jR57G03yxCnTtPQaRqxi37NiVJzt67Ilnq46QItLDcF-_gDdkWIw-JlsvMj6YvNMJRXtUaH9s5G7ZsFx3adp-pL_X5opXrkSIQga7Ri6iwojb9O11NC54RjZhS7UcY77-oHhbkx5y-zIzS01ycsZF-WNjwN04vgStzGq5IiKVO5tSpyHASYYA7SB1cpvIwzlB36duuRys0VdX91Ej66WslI2MeNPLE" />
+                            </div>
+                            <div>
+                                <p class="font-bold">Deep Nakrani</p>
+                                <p class="text-sm text-on-surface-variant">CEO, Nakrani Enterprises</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Final CTA/Contact Form -->
+        <section class="py-24 px-6 lg:px-12">
+            <div
+                class="max-w-5xl mx-auto rounded-[3rem] hero-gradient p-12 lg:p-20 text-on-primary shadow-2xl relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-[100px] -mr-48 -mt-48"></div>
+                <div class="relative z-10 grid lg:grid-cols-2 gap-16 items-center">
+                    <div class="space-y-8">
+                        <h2 class="text-4xl lg:text-5xl font-extrabold tracking-tight">Let's Talk Technology.</h2>
+                        <p class="text-on-primary/80 text-lg">Ready to transform your operations? Fill out the form and
+                            our architects will be in touch within 24 hours.</p>
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-3">
+                                <span class="material-symbols-outlined">mail</span>
+                                <span>nakranitechno@gmail.com</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <span class="material-symbols-outlined">call</span>
+                                <span>+91 9081664982</span>
+                            </div>
+                        </div>
+                    </div>
+                    <form class="space-y-4 bg-white/10 backdrop-blur-md p-8 rounded-[2rem] border border-white/20" data-appscript-form data-form-source="services-cta">
+                        <div>
+                            <input
+                                class="w-full bg-white/5 border border-white/20 rounded-xl px-4 py-3 placeholder:text-white/60 focus:ring-2 focus:ring-white/40 focus:border-transparent outline-none transition-all"
+                                placeholder="Your Name" type="text" name="name" required />
+                        </div>
+                        <div>
+                            <input
+                                class="w-full bg-white/5 border border-white/20 rounded-xl px-4 py-3 placeholder:text-white/60 focus:ring-2 focus:ring-white/40 focus:border-transparent outline-none transition-all"
+                                placeholder="Business Email" type="email" name="email" required />
+                        </div>
+                        <div>
+                            <select
+                                class="w-full bg-white/5 border border-white/20 rounded-xl px-4 py-3 text-white/60 focus:ring-2 focus:ring-white/40 focus:border-transparent outline-none transition-all appearance-none" name="projectType" required>
+                                <option class="text-on-surface">Select Service</option>
+                                <option class="text-on-surface">Web Development</option>
+                                <option class="text-on-surface">Custom Software</option>
+                                <option class="text-on-surface">ERP Solutions</option>
+                                <option class="text-on-surface">Infrastructure</option>
+                            </select>
+                        </div>
+                        <div>
+                            <textarea
+                                class="w-full bg-white/5 border border-white/20 rounded-xl px-4 py-3 placeholder:text-white/60 focus:ring-2 focus:ring-white/40 focus:border-transparent outline-none transition-all"
+                                placeholder="Project details" rows="3" name="message" required></textarea>
+                        </div>
+                        <button class="w-full bg-white text-primary font-bold py-4 rounded-xl btn-premium"
+                            type="submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div id="footer-placeholder"></div>
+    <script src="components.js"></script>
+</body>
+
+</html>

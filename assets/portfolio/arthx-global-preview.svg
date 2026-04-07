@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-labelledby="title desc">
+  <title id="title">Arthx Global preview</title>
+  <desc id="desc">Global trade website with route lines, globe grid, and business interface panels.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#051b3d"/>
+      <stop offset="55%" stop-color="#0b4e9b"/>
+      <stop offset="100%" stop-color="#d9e9ff"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#7fd0ff" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#7fd0ff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="750" rx="48" fill="url(#bg)"/>
+  <circle cx="900" cy="160" r="220" fill="url(#glow)"/>
+  <circle cx="360" cy="570" r="260" fill="#ffffff" opacity="0.08"/>
+  <rect x="110" y="110" width="980" height="530" rx="34" fill="#ffffff" opacity="0.12"/>
+  <rect x="145" y="145" width="910" height="460" rx="28" fill="#f7fbff"/>
+  <circle cx="350" cy="365" r="150" fill="#e4f2ff"/>
+  <circle cx="350" cy="365" r="120" fill="none" stroke="#0b4e9b" stroke-width="4" opacity="0.35"/>
+  <circle cx="350" cy="365" r="85" fill="none" stroke="#0b4e9b" stroke-width="3" opacity="0.25"/>
+  <path d="M200 365 H500" stroke="#0b4e9b" stroke-width="4" opacity="0.35"/>
+  <path d="M350 215 V515" stroke="#0b4e9b" stroke-width="4" opacity="0.35"/>
+  <path d="M235 285 C300 325, 400 325, 465 285" fill="none" stroke="#0b4e9b" stroke-width="4" opacity="0.28"/>
+  <path d="M235 445 C300 405, 400 405, 465 445" fill="none" stroke="#0b4e9b" stroke-width="4" opacity="0.28"/>
+  <path d="M240 270 C350 205, 420 225, 485 180" fill="none" stroke="#0d63c9" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="485" cy="180" r="12" fill="#0d63c9"/>
+  <path d="M240 470 C355 540, 430 505, 520 560" fill="none" stroke="#0d63c9" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="520" cy="560" r="12" fill="#0d63c9"/>
+  <rect x="620" y="190" width="360" height="92" rx="22" fill="#eaf3ff"/>
+  <rect x="620" y="310" width="360" height="92" rx="22" fill="#eaf3ff"/>
+  <rect x="620" y="430" width="360" height="92" rx="22" fill="#eaf3ff"/>
+  <rect x="650" y="220" width="120" height="16" rx="8" fill="#0b4e9b"/>
+  <rect x="650" y="242" width="190" height="16" rx="8" fill="#aac9eb"/>
+  <rect x="650" y="340" width="150" height="16" rx="8" fill="#0b4e9b"/>
+  <rect x="650" y="362" width="210" height="16" rx="8" fill="#aac9eb"/>
+  <rect x="650" y="460" width="130" height="16" rx="8" fill="#0b4e9b"/>
+  <rect x="650" y="482" width="230" height="16" rx="8" fill="#aac9eb"/>
+  <text x="145" y="650" fill="#ffffff" font-family="Manrope, Arial, sans-serif" font-size="42" font-weight="800">ARTHX GLOBAL</text>
+  <text x="145" y="686" fill="#dfeeff" font-family="Manrope, Arial, sans-serif" font-size="20" font-weight="600">Global Trade Website Experience</text>
+</svg>
