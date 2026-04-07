@@ -4,6 +4,7 @@
   "description": "Nakrani Techno & Solution LLP Website Project",
   "main": "index.html",
   "scripts": {
+    "build": "echo \"Static site build step complete\"",
     "dev": "npx -y serve .",
     "start": "npx -y serve ."
   },
